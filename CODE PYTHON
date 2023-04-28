@@ -1,0 +1,32 @@
+print("Welcome to Python Pizza Deliverys") # Message de bienvenue
+
+size = input("What size pizza would you like ? S, M ou L ") # Demander la taille de la pizza
+
+add_pepperoni = input("Do you want pepperoni on your pizza? Yes or No ") # Demander si l'utilisateur veut du pepperoni sur la pizza
+
+extra_cheese = input("Do you want extra cheese on your pizza? Yes or No ") # Demander si l'utilisateur veut du fromage supplémentaire sur la pizza
+
+# Initialiser le prix de base de la pizza en fonction de la taille
+if size == "S":
+  base_price = 15
+elif size == "M":
+  base_price = 20
+elif size == "L":
+  base_price = 25
+else:
+  print("Pizza size not available. Please enter S, M ou L.")
+
+# Ajouter le prix du pepperoni si l'utilisateur en a demandé
+if add_pepperoni == "Yes":
+  if size == "S" or size == "M":
+    base_price += 2
+else:
+   base_price += 3
+
+# Ajouter le prix du fromage supplémentaire si l'utilisateur en a demandé
+if extra_cheese == "Yes":
+  base_price += 1
+
+# Afficher le prix final de la pizza
+print(f"Your final bill is : {base_price} $.")
+print(f"Thank you for ordering..!")
